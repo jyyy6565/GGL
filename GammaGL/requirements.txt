@@ -1,0 +1,10 @@
+numpy<=1.23
+scipy
+pybind11
+tensorflow
+git+https://github.com/tensorlayer/tensorlayerx.git
+pytest
+tqdm
+pandas
+numba
+pyparsing
