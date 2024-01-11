@@ -2,6 +2,9 @@ import scipy.sparse as ssp
 import tensorlayerx as tlx
 import numpy as np
 from typing import Union, Optional, Iterable, Any, Dict
+
+from gammagl.utils.platform_utils import Tensor
+
 from .num_nodes import maybe_num_nodes
 import gammagl
 from gammagl.data import Graph, HeteroGraph
@@ -15,7 +18,7 @@ def to_scipy_sparse_matrix(edge_index, edge_attr = None, num_nodes = None):
         edge_index:
             The edge indices.
         edge_attr: tensor, optional
-            Edge weights or multi-dimensional
+            Edge weights or multidimensional
             edge features. (default: :obj:`None`)
         num_nodes: int, optional
             The number of nodes, *i.e.*

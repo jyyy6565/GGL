@@ -3,7 +3,6 @@ import os.path as osp
 import re
 from typing import Callable, Dict, Optional, Tuple, Union
 
-
 from gammagl.data import download_url
 from gammagl.data import InMemoryDataset
 from gammagl.data.extract import extract_gz
@@ -11,7 +10,6 @@ import tensorlayerx as tlx
 
 # from GammaGL.gammagl.utils.smiles import from_smiles
 from ..utils.smiles import from_smiles
-
 
 class MoleculeNet(InMemoryDataset):
     r"""The `MoleculeNet <http://moleculenet.org/datasets-1>`_ benchmark
@@ -214,7 +212,7 @@ class MoleculeNet(InMemoryDataset):
 
             data_list.append(data)
 
-        self.save_data(data_list, self.processed_paths[0])
+        self.save_data(self.collate(data_list), self.processed_paths[0])
 
     def __repr__(self) -> str:
         return f'{self.names[self.name][0]}({len(self)})'
