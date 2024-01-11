@@ -159,7 +159,7 @@ class MoleculeNet(InMemoryDataset):
         assert self.name in self.names.keys()
         super().__init__(root, transform, pre_transform, pre_filter,
                          force_reload=force_reload)
-        self.load_data(self.processed_paths[0])
+        self.data, self.slices = self.load_data(self.processed_paths[0])
 
     @property
     def raw_dir(self) -> str:
